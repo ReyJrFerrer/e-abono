@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
 export const ContactUs = () => {
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<maplibregl.Map | null>(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +16,33 @@ export const ContactUs = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+
+  useEffect(() => {
+    if (map.current || !mapContainer.current) return;
+
+    map.current = new maplibregl.Map({
+      container: mapContainer.current,
+      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=q8lDMWkPklOWrDhWR0bf`,
+      center: [120.5962463, 16.4604268],
+      zoom: 15,
+    });
+
+    new maplibregl.Marker({ color: '#7c9a3d' })
+      .setLngLat([120.5962463, 16.4604268])
+      .setPopup(
+        new maplibregl.Popup().setHTML(
+          '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
+        )
+      )
+      .addTo(map.current);
+
+    return () => {
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
+    };
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,7 +67,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <main>
         <section
@@ -52,30 +84,42 @@ export const ContactUs = () => {
           </div>
         </section>
 
-        <section className="py-0">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-0 shadow-2xl rounded-lg overflow-hidden">
-              <div className="h-full min-h-[600px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.4067943799947!2d120.59624631483!3d16.46042688863584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a167d98bd975%3A0x8c784ae24e5974fe!2sBenguet%20State%20University!5e0!3m2!1sen!2sph!4v1638888888888!5m2!1sen!2sph"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Benguet State University Location"
-                ></iframe>
+        <section className="py-16">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-gradient-to-r from-eabono-green to-eabono-green-light p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-white text-2xl font-bold">Our Location</h2>
+                  </div>
+                  <p className="text-white/80 text-sm">Find us at Benguet State University</p>
+                </div>
+                <div ref={mapContainer} className="h-[500px] w-full" />
               </div>
 
-              <div className="bg-eabono-green p-12">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-white font-semibold mb-2"
-                    >
-                      Name
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-gradient-to-r from-eabono-green to-eabono-green-light p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-white text-2xl font-bold">Get in Touch</h2>
+                  </div>
+                  <p className="text-white/80 text-sm">Send us a message and we'll respond as soon as possible</p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="block text-gray-700 font-semibold text-sm">
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -84,16 +128,14 @@ export const ContactUs = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-transparent focus:border-eabono-gold focus:outline-none"
+                      placeholder="Your full name"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200"
                     />
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-white font-semibold mb-2"
-                    >
-                      Email
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="block text-gray-700 font-semibold text-sm">
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -102,16 +144,14 @@ export const ContactUs = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-transparent focus:border-eabono-gold focus:outline-none"
+                      placeholder="your.email@example.com"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200"
                     />
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="comment"
-                      className="block text-white font-semibold mb-2"
-                    >
-                      Comment
+                  <div className="space-y-2">
+                    <label htmlFor="comment" className="block text-gray-700 font-semibold text-sm">
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       id="comment"
@@ -119,37 +159,57 @@ export const ContactUs = () => {
                       value={formData.comment}
                       onChange={handleInputChange}
                       required
-                      rows={8}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-transparent focus:border-eabono-gold focus:outline-none resize-none"
+                      rows={6}
+                      placeholder="Tell us how we can help you..."
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200 resize-none"
                     ></textarea>
                   </div>
 
                   {submitMessage && (
-                    <div className="bg-white text-eabono-green px-4 py-3 rounded-lg font-semibold">
-                      {submitMessage}
+                    <div className="bg-green-50 border-2 border-green-200 text-eabono-green px-4 py-3 rounded-xl font-semibold flex items-center gap-3">
+                      <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span>{submitMessage}</span>
                     </div>
                   )}
 
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="bg-eabono-gold text-black px-12 py-3 rounded-lg font-bold text-lg hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Submitting...' : 'Submit'}
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-eabono-gold text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
                 </form>
               </div>
             </div>
-          </div>
-        </section>
 
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-6">
-            <p className="text-center text-eabono-green text-lg font-semibold">
-              You may find us in our Main Office or in Benguet State University, La Trinidad.
-            </p>
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center gap-2 bg-white px-8 py-4 rounded-2xl shadow-lg">
+                <svg className="w-6 h-6 text-eabono-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <p className="text-gray-700 font-semibold">
+                  Visit us at <span className="text-eabono-green">Benguet State University</span>, La Trinidad, Benguet
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
