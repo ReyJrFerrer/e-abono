@@ -72,33 +72,36 @@ export const Hero = () => {
           >
             <div className="relative">
               <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
-                <div className="w-full h-full bg-white flex flex-col items-center justify-center p-6 relative">
-                  <div className="absolute top-6 left-0 right-0 flex justify-center">
-                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-12 object-contain" />
-                  </div>
-
-                  <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="w-32 h-32 rounded-full border-4 border-eabono-gold flex items-center justify-center mb-6">
-                      <div className="flex flex-col items-center">
-                        <div className="text-eabono-green-light">
-                          <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 60 Q30 30 50 30 Q70 30 70 60" stroke="currentColor" strokeWidth="4" fill="none"/>
-                            <path d="M50 30 L55 40 L45 40 Z" fill="currentColor"/>
-                            <path d="M40 50 L45 60 L35 60 Z" fill="currentColor"/>
-                            <path d="M60 50 L65 60 L55 60 Z" fill="currentColor"/>
-                            <path d="M30 60 Q50 80 70 60" stroke="currentColor" strokeWidth="4" fill="none"/>
-                            <ellipse cx="50" cy="70" rx="25" ry="10" fill="#86BC42" opacity="0.3"/>
-                          </svg>
-                        </div>
-                      </div>
+                <div className="w-full h-full bg-white flex flex-col items-center p-8 relative">
+                  <div className="flex flex-col items-center mt-6">
+                    <div className="w-36 h-36 rounded-full border-[6px] border-[#F5C542] flex items-center justify-center mb-4 bg-white shadow-lg">
+                      <svg className="w-28 h-28" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 180 Q70 165 60 140 L60 130 Q60 120 70 115 Q80 110 90 115 Q95 120 100 125" fill="#7BA83D"/>
+                        <path d="M100 180 Q130 165 140 140 L140 130 Q140 120 130 115 Q120 110 110 115 Q105 120 100 125" fill="#5C8A3D"/>
+                        <ellipse cx="100" cy="175" rx="45" ry="18" fill="#9BC157" opacity="0.5"/>
+                        <ellipse cx="100" cy="175" rx="35" ry="14" fill="#7BA83D" opacity="0.4"/>
+                        <path d="M85 110 Q80 90 75 75 Q72 65 70 60 L75 55 Q78 58 82 65 Q87 75 90 85 Q93 95 95 105" fill="#9BC157" stroke="#7BA83D" strokeWidth="1"/>
+                        <path d="M80 100 Q75 85 70 72 L65 68 Q63 66 65 64 L70 62 Q73 65 76 72 Q81 82 85 95" fill="#B5D86A"/>
+                        <path d="M95 105 Q98 85 100 70 Q101 58 102 50 L100 45 Q98 50 98 60 Q97 75 95 90 Q94 100 93 110" fill="#4A7C2C" stroke="#2D5C1E" strokeWidth="1.5"/>
+                        <path d="M100 70 L95 58 Q93 54 95 52 L100 50 L105 52 Q107 54 105 58 L100 70" fill="#5E9E3E"/>
+                        <path d="M100 70 L110 58 Q112 54 115 53 L118 55 Q120 58 118 62 L110 75" fill="#4A7C2C"/>
+                        <path d="M115 110 Q120 90 125 75 Q128 65 130 60 L125 55 Q122 58 118 65 Q113 75 110 85 Q107 95 105 105" fill="#2D5C1E" stroke="#1F4419" strokeWidth="1"/>
+                        <path d="M120 100 Q125 85 130 72 L135 68 Q137 66 135 64 L130 62 Q127 65 124 72 Q119 82 115 95" fill="#5E9E3E"/>
+                        <path d="M60 140 Q80 155 100 150 Q120 155 140 140" stroke="#5C8A3D" strokeWidth="3" fill="none"/>
+                      </svg>
                     </div>
-                    <h2 className="text-gray-900 text-2xl font-bold mb-2">E-Abono</h2>
-                    <p className="text-gray-700 text-center text-sm px-4">Support our Local farmers crop growth with sustainable technology</p>
+                    <h2 className="text-gray-900 text-4xl font-bold mb-1 tracking-tight">E-Abono</h2>
                   </div>
 
-                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-4 px-8">
-                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-16 object-contain" />
-                    <img src="/Approved-BSU-logo-2020.png (1).png" alt="BSU" className="h-16 object-contain" />
+                  <div className="flex-1 flex items-center justify-center px-6">
+                    <p className="text-[#2D5C1E] text-center text-base font-semibold leading-relaxed">
+                      Support our Local farmers crop growth with sustainable technology
+                    </p>
+                  </div>
+
+                  <div className="flex justify-center items-end gap-8 pb-6">
+                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-20 w-auto object-contain" />
+                    <img src="/Approved-BSU-logo-2020.png.png" alt="BSU" className="h-20 w-auto object-contain" />
                   </div>
                 </div>
               </div>
