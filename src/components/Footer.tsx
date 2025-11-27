@@ -1,23 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Globe } from 'lucide-react';
 
 export const Footer = () => {
   const websiteLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Calculator', href: '#calculator' },
-    { label: 'Crops', href: '#crops' },
+    { label: 'Home', href: '/' },
+    { label: 'Calculator', href: '/calculator' },
+    { label: 'Crops', href: '/crops' },
   ];
 
   const resourceLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Documentation', href: '#docs' },
-    { label: 'Support', href: '#support' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Contact Us', href: '/contact-us' },
+    { label: 'Project Sites', href: '/#project-sites' },
   ];
 
   const legalLinks = [
-    { label: 'Terms of Service', href: '#terms' },
-    { label: 'Disclosure', href: '#disclosure' },
-    { label: 'Privacy Policy', href: '#privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Disclosure', href: '/disclosure' },
+    { label: 'Privacy Policy', href: '/privacy' },
   ];
 
   return (
@@ -43,12 +44,12 @@ export const Footer = () => {
             <ul className="space-y-2">
               {websiteLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -59,12 +60,21 @@ export const Footer = () => {
             <ul className="space-y-2">
               {resourceLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('/#') ? (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
