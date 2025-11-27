@@ -8,10 +8,12 @@ import { PotatoPage } from "./components/PotatoPage";
 import { CabbagePage } from "./components/CabbagePage";
 import { AboutUs } from "./components/AboutUs";
 import { ContactUs } from "./components/ContactUs";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<Calculator />} />
