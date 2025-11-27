@@ -74,7 +74,7 @@ export const Hero = () => {
               <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
                 <div className="w-full h-full bg-white flex flex-col items-center p-8 relative">
                   <div className="flex flex-col items-center mt-6">
-                    <div className="w-36 h-36 rounded-full border-[6px] border-[#F5C542] flex items-center justify-center mb-4 bg-white shadow-lg p-3">
+                    <div className="w-36 h-36 flex items-center justify-center mb-4">
                       <img src="/image.png" alt="E-Abono Logo" className="w-full h-full object-contain" />
                     </div>
                     <h2 className="text-gray-900 text-4xl font-bold mb-1 tracking-tight">E-Abono</h2>
