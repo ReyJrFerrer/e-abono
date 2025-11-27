@@ -51,7 +51,7 @@ export const Hero = () => {
                 to="/about-us"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Discover More
+                Learn More
                 <ChevronRight size={20} />
               </Link>
               <Link
