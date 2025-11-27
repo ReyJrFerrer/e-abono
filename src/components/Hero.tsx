@@ -72,24 +72,34 @@ export const Hero = () => {
           >
             <div className="relative">
               <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
-                <div className="w-full h-full bg-gradient-to-br from-eabono-green-light to-eabono-green flex flex-col items-center justify-center p-6">
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6">
-                    <span className="text-eabono-green font-bold text-4xl">E</span>
+                <div className="w-full h-full bg-white flex flex-col items-center justify-center p-6 relative">
+                  <div className="absolute top-6 left-0 right-0 flex justify-center">
+                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-12 object-contain" />
                   </div>
-                  <h2 className="text-white text-2xl font-bold mb-2">E-Abono</h2>
-                  <p className="text-white text-center text-sm">Smart Agriculture Platform</p>
-                  <div className="mt-12 flex gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-lg"></div>
-                    <div className="w-12 h-12 bg-white/20 rounded-lg"></div>
+
+                  <div className="flex flex-col items-center justify-center flex-1">
+                    <div className="w-32 h-32 rounded-full border-4 border-eabono-gold flex items-center justify-center mb-6">
+                      <div className="flex flex-col items-center">
+                        <div className="text-eabono-green-light">
+                          <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 60 Q30 30 50 30 Q70 30 70 60" stroke="currentColor" strokeWidth="4" fill="none"/>
+                            <path d="M50 30 L55 40 L45 40 Z" fill="currentColor"/>
+                            <path d="M40 50 L45 60 L35 60 Z" fill="currentColor"/>
+                            <path d="M60 50 L65 60 L55 60 Z" fill="currentColor"/>
+                            <path d="M30 60 Q50 80 70 60" stroke="currentColor" strokeWidth="4" fill="none"/>
+                            <ellipse cx="50" cy="70" rx="25" ry="10" fill="#86BC42" opacity="0.3"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-gray-900 text-2xl font-bold mb-2">E-Abono</h2>
+                    <p className="text-gray-700 text-center text-sm px-4">Support our Local farmers crop growth with sustainable technology</p>
                   </div>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4 px-8">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-lg p-1 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-center">Bagong Pilipinas</span>
-                </div>
-                <div className="w-16 h-16 bg-white rounded-lg shadow-lg p-1 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-center">BSU</span>
+
+                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-4 px-8">
+                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-16 object-contain" />
+                    <img src="/Approved-BSU-logo-2020.png (1).png" alt="BSU" className="h-16 object-contain" />
+                  </div>
                 </div>
               </div>
             </div>
