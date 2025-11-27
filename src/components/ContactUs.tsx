@@ -22,19 +22,46 @@ export const ContactUs = () => {
 
     map.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=q8lDMWkPklOWrDhWR0bf`,
+      style: {
+        version: 8,
+        sources: {
+          'maptiler': {
+            type: 'raster',
+            tiles: [
+              'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=q8lDMWkPklOWrDhWR0bf'
+            ],
+            tileSize: 256,
+            attribution: '© MapTiler © OpenStreetMap contributors'
+          }
+        },
+        layers: [
+          {
+            id: 'maptiler-layer',
+            type: 'raster',
+            source: 'maptiler',
+            minzoom: 0,
+            maxzoom: 22
+          }
+        ]
+      },
       center: [120.5962463, 16.4604268],
       zoom: 15,
     });
 
-    new maplibregl.Marker({ color: '#7c9a3d' })
-      .setLngLat([120.5962463, 16.4604268])
-      .setPopup(
-        new maplibregl.Popup().setHTML(
-          '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
+    map.current.on('load', () => {
+      new maplibregl.Marker({ color: '#7c9a3d' })
+        .setLngLat([120.5962463, 16.4604268])
+        .setPopup(
+          new maplibregl.Popup().setHTML(
+            '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
+          )
         )
-      )
-      .addTo(map.current);
+        .addTo(map.current!);
+    });
+
+    map.current.on('error', (e) => {
+      console.error('Map error:', e);
+    });
 
     return () => {
       if (map.current) {
