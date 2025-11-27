@@ -128,7 +128,7 @@ export const AboutUs = () => {
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative">
+            <div className="relative max-w-6xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
@@ -154,14 +154,14 @@ export const AboutUs = () => {
                 <>
                   <button
                     onClick={prevSlide}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft size={24} />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Next slide"
                   >
                     <ChevronRight size={24} />
