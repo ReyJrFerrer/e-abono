@@ -21,15 +21,24 @@ export const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 bg-eabono-gold/20 border border-eabono-gold/50 rounded-full mb-6 backdrop-blur-sm"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span className="text-eabono-gold text-sm font-semibold">We are Producing Natural Products</span>
+            </motion.div>
+
             <motion.h1
               className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Precision
+              Organic Farming
               <br />
-              <span className="text-white">Agriculture</span>
+              <span className="text-white">and Agriculture</span>
             </motion.h1>
 
             <motion.p
@@ -38,7 +47,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Improving the Productivity and Economic Profitability of Cabbage and Potato in Benguet
+              Enhancing productivity and profitability for farmers in Benguet through innovative agricultural technology and sustainable farming practices.
             </motion.p>
 
             <motion.div
@@ -51,7 +60,7 @@ export const Hero = () => {
                 to="/about-us"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Learn More
+                Discover More
                 <ChevronRight size={20} />
               </Link>
               <Link
