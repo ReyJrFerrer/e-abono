@@ -7,6 +7,7 @@ import { CropsLanding } from "./components/CropsLanding";
 import { PotatoPage } from "./components/PotatoPage";
 import { CabbagePage } from "./components/CabbagePage";
 import { AboutUs } from "./components/AboutUs";
+import { ContactUs } from "./components/ContactUs";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/crops/potato" element={<PotatoPage />} />
         <Route path="/crops/cabbage" element={<CabbagePage />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

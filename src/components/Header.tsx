@@ -70,9 +70,12 @@ export const Header = () => {
             )}
           </nav>
 
-          <button className="hidden md:block bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+          <Link
+            to="/contact-us"
+            className="hidden md:block bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+          >
             Contact Us
-          </button>
+          </Link>
 
           <button
             className="md:hidden text-white"
@@ -111,9 +114,13 @@ export const Header = () => {
                 </a>
               )
             )}
-            <button className="bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-left">
+            <Link
+              to="/contact-us"
+              className="bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-left"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Contact Us
-            </button>
+            </Link>
           </nav>
         </div>
       )}
