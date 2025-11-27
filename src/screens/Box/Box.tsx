@@ -1,5 +1,3 @@
-import React from "react";
-
 const colorBoxes = [
   { color: "bg-[#1f491a]", width: "w-[59px]" },
   { color: "bg-[#5e7724]", width: "w-[59px]" },
