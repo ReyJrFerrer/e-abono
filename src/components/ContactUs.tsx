@@ -25,32 +25,33 @@ export const ContactUs = () => {
       style: {
         version: 8,
         sources: {
-          'satellite': {
+          'osm': {
             type: 'raster',
             tiles: [
-              'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=q8lDMWkPklOWrDhWR0bf'
+              'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             ],
             tileSize: 256,
-            attribution: '© MapTiler © OpenStreetMap contributors'
+            attribution: '© OpenStreetMap contributors',
+            maxzoom: 19
           }
         },
         layers: [
           {
-            id: 'satellite-layer',
+            id: 'osm-layer',
             type: 'raster',
-            source: 'satellite',
+            source: 'osm',
             minzoom: 0,
-            maxzoom: 22
+            maxzoom: 19
           }
         ]
       },
-      center: [120.5903, 16.4418],
-      zoom: 16,
+      center: [120.59032, 16.44188],
+      zoom: 17,
     });
 
     map.current.on('load', () => {
       new maplibregl.Marker({ color: '#7c9a3d' })
-        .setLngLat([120.5903, 16.4418])
+        .setLngLat([120.59032, 16.44188])
         .setPopup(
           new maplibregl.Popup().setHTML(
             '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
