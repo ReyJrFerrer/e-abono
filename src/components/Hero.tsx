@@ -38,7 +38,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Enhancing productivity and profitability for farmers in Benguet through innovative agricultural technology and sustainable farming practices.
+              Improving the Productivity and Economic Profitability of Cabbage and Potato in Benguet
             </motion.p>
 
             <motion.div
