@@ -27,9 +27,9 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Organic Farming
+              Precision
               <br />
-              <span className="text-white">and Agriculture</span>
+              <span className="text-white">Agriculture</span>
             </motion.h1>
 
             <motion.p
