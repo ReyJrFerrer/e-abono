@@ -98,9 +98,10 @@ export const ValueProposition = () => {
             >
               <Link
                 to="/about-us"
-                className="inline-block bg-eabono-gold text-white px-10 py-4 rounded-xl font-semibold hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"
               >
                 Learn More
+                <ChevronRight size={20} />
               </Link>
             </motion.div>
           </motion.div>

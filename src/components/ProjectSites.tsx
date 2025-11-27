@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
+import { ChevronRight } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -21,9 +22,10 @@ const ProjectCard = ({ title, description, imageUrl }: ProjectCardProps) => {
         <p className="text-gray-200 mb-4 line-clamp-2">{description}</p>
         <Link
           to="/about-us"
-          className="inline-block bg-eabono-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-eabono-gold/90 transition-all duration-300"
+          className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
         >
           Learn More
+          <ChevronRight size={20} />
         </Link>
       </div>
     </div>
