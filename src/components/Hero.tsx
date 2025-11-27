@@ -1,26 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export const Hero = () => {
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-    setRotation({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
-  };
-
   return (
     <section
       id="home"
@@ -82,106 +65,33 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="md:col-span-2 flex justify-center perspective-1000"
+            className="md:col-span-2 flex justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <div
-              className="relative"
-              style={{ perspective: '1000px' }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-            >
-              <motion.div
-                className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900 cursor-pointer"
-                style={{
-                  transformStyle: 'preserve-3d',
-                  transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                }}
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-eabono-green-light to-eabono-green flex flex-col items-center justify-center p-6 relative">
-                  <motion.div
-                    className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-lg p-2"
-                    animate={{
-                      rotate: [0, 360],
-                    }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  >
-                    <img
-                      src="/image.png"
-                      alt="E-Abono Logo"
-                      className="w-full h-full object-contain"
-                    />
-                  </motion.div>
-                  <motion.h2
-                    className="text-white text-2xl font-bold mb-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    E-Abono
-                  </motion.h2>
-                  <motion.p
-                    className="text-white text-center text-sm mb-8"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    Smart Agriculture Platform
-                  </motion.p>
-
-                  <div className="mt-auto grid grid-cols-2 gap-4 w-full px-4">
-                    <motion.div
-                      className="bg-white/90 backdrop-blur-sm rounded-xl p-3 flex items-center justify-center shadow-lg"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <img
-                        src="/bagong-pilipinas-v4.png"
-                        alt="Bagong Pilipinas"
-                        className="w-full h-full object-contain"
-                      />
-                    </motion.div>
-                    <motion.div
-                      className="bg-white/90 backdrop-blur-sm rounded-xl p-3 flex items-center justify-center shadow-lg"
-                      whileHover={{ scale: 1.1, rotate: -5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <img
-                        src="/Approved-BSU-logo-2020.png.png"
-                        alt="BSU Logo"
-                        className="w-full h-full object-contain"
-                      />
-                    </motion.div>
+            <div className="relative">
+              <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
+                <div className="w-full h-full bg-gradient-to-br from-eabono-green-light to-eabono-green flex flex-col items-center justify-center p-6">
+                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6">
+                    <span className="text-eabono-green font-bold text-4xl">E</span>
+                  </div>
+                  <h2 className="text-white text-2xl font-bold mb-2">E-Abono</h2>
+                  <p className="text-white text-center text-sm">Smart Agriculture Platform</p>
+                  <div className="mt-12 flex gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg"></div>
+                    <div className="w-12 h-12 bg-white/20 rounded-lg"></div>
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                className="absolute -inset-4 bg-gradient-to-r from-eabono-gold/20 to-eabono-green-light/20 rounded-[3rem] blur-2xl -z-10"
-                animate={{
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
+              </div>
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4 px-8">
+                <div className="w-16 h-16 bg-white rounded-lg shadow-lg p-1 flex items-center justify-center">
+                  <span className="text-xs font-semibold text-center">Bagong Pilipinas</span>
+                </div>
+                <div className="w-16 h-16 bg-white rounded-lg shadow-lg p-1 flex items-center justify-center">
+                  <span className="text-xs font-semibold text-center">BSU</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
