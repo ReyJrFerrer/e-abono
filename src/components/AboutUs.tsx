@@ -79,9 +79,9 @@ export const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main>
         <section
-          className="relative h-[500px] flex items-center justify-center bg-cover bg-center"
+          className="relative h-screen flex items-center justify-center bg-cover bg-center"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80')`,
           }}
