@@ -11,4 +11,7 @@ export default defineConfig({
       plugins: [tailwind()],
     },
   },
+  optimizeDeps: {
+    include: ['maplibre-gl'],
+  },
 });
