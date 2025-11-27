@@ -20,7 +20,7 @@ export const Header = () => {
     { label: 'Home', href: '/', isRoute: true },
     { label: 'Calculator', href: '/calculator', isRoute: true },
     { label: 'Crops', href: '/crops', isRoute: true },
-    { label: 'About Us', href: '#about', isRoute: false },
+    { label: 'About Us', href: '/about-us', isRoute: true },
   ];
 
   const isActive = (href: string) => {
