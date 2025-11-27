@@ -23,7 +23,7 @@ export const CabbagePage = () => {
       growthStage: 'Vegetative Growth Stage',
       fertilization: '140 kg N/ha, 65 kg P/ha, 110 kg K/ha',
       expectedYield: '35-45 tons/hectare',
-      imageUrl: 'https://images.unsplash.com/photo-1587411768625-98e8886f48e7?w=800&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1568584711271-1467f8c1b173?w=800&q=80',
     },
     {
       location: 'Buguias',
