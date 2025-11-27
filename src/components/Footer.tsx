@@ -16,9 +16,9 @@ export const Footer = () => {
   ];
 
   const legalLinks = [
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Disclosure', href: '/disclosure' },
-    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/' },
+    { label: 'Disclosure', href: '/' },
+    { label: 'Privacy Policy', href: '/' },
   ];
 
   return (
