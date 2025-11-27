@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface ProjectCardProps {
   title: string;
@@ -17,9 +18,12 @@ const ProjectCard = ({ title, description, imageUrl }: ProjectCardProps) => {
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
         <h3 className="text-2xl font-bold mb-3">{title}</h3>
         <p className="text-gray-200 mb-4 line-clamp-2">{description}</p>
-        <button className="bg-eabono-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-eabono-gold/90 transition-all duration-300">
+        <Link
+          to="/about-us"
+          className="inline-block bg-eabono-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-eabono-gold/90 transition-all duration-300"
+        >
           Learn More
-        </button>
+        </Link>
       </div>
     </div>
   );

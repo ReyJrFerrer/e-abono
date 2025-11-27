@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
@@ -20,12 +21,18 @@ export const Hero = () => {
               Enhancing productivity and profitability for farmers in Benguet through innovative agricultural technology and sustainable farming practices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-eabono-green transition-all duration-300">
+              <Link
+                to="/about-us"
+                className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-eabono-green transition-all duration-300 text-center"
+              >
                 Learn More
-              </button>
-              <button className="px-8 py-3 bg-white text-eabono-green font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300">
+              </Link>
+              <Link
+                to="/calculator"
+                className="px-8 py-3 bg-white text-eabono-green font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 text-center"
+              >
                 Open Calculator
-              </button>
+              </Link>
             </div>
           </div>
 

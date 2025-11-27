@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const ValueProposition = () => {
   const features = [
@@ -37,9 +38,12 @@ export const ValueProposition = () => {
                 </li>
               ))}
             </ul>
-            <button className="bg-eabono-gold text-white px-8 py-3 rounded-lg font-semibold hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <Link
+              to="/about-us"
+              className="inline-block bg-eabono-gold text-white px-8 py-3 rounded-lg font-semibold hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
