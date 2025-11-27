@@ -81,13 +81,8 @@ export const Calculator = () => {
                         className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200 appearance-none cursor-pointer"
                       >
                         <option value="">Select crop type</option>
-                        <option value="corn">Corn</option>
-                        <option value="rice">Rice</option>
-                        <option value="wheat">Wheat</option>
-                        <option value="soybean">Soybean</option>
                         <option value="potato">Potato</option>
                         <option value="cabbage">Cabbage</option>
-                        <option value="carrot">Carrot</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
                         <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,11 +122,11 @@ export const Calculator = () => {
                       Growth Target <span className="text-red-500">*</span>
                     </label>
                     <input
-                      type="text"
+                      type="number"
                       name="growthTarget"
                       value={formData.growthTarget}
                       onChange={handleInputChange}
-                      placeholder="Enter growth target"
+                      placeholder="Enter growth target (kg/ha)"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200"
                     />
                   </div>
@@ -141,11 +136,11 @@ export const Calculator = () => {
                       Suggested (N) <span className="text-red-500">*</span>
                     </label>
                     <input
-                      type="text"
+                      type="number"
                       name="suggestedN"
                       value={formData.suggestedN}
                       onChange={handleInputChange}
-                      placeholder="Enter suggested nitrogen"
+                      placeholder="Enter nitrogen rate (kg/ha)"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200"
                     />
                   </div>
@@ -175,14 +170,24 @@ export const Calculator = () => {
                     <label className="block text-gray-700 font-semibold text-sm">
                       Location <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      type="text"
-                      name="location"
-                      value={formData.location}
-                      onChange={handleInputChange}
-                      placeholder="Enter location"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200"
-                    />
+                    <div className="relative">
+                      <select
+                        name="location"
+                        value={formData.location}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-eabono-green focus:bg-white focus:outline-none transition-all duration-200 appearance-none cursor-pointer"
+                      >
+                        <option value="">Select location</option>
+                        <option value="La Trinidad">La Trinidad</option>
+                        <option value="Atok">Atok</option>
+                        <option value="Buguias">Buguias</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="space-y-2">
