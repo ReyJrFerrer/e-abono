@@ -19,10 +19,10 @@ const CropCard = ({ name, description, imageUrl, path }: CropCardProps) => {
       className="group relative overflow-hidden rounded-2xl shadow-xl h-[500px] cursor-pointer block transform hover:-translate-y-2 transition-all duration-500"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 rounded-2xl"
         style={{ backgroundImage: `url('${imageUrl}')` }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-500 rounded-2xl"></div>
       <div className="absolute top-6 right-6">
         <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-eabono-gold transition-all duration-300">
           <Sprout size={28} className="text-white" />
