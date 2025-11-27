@@ -8,11 +8,9 @@ export const ValueProposition = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const features = [
-    'Real-time crop health monitoring',
-    'AI-powered nitrogen level detection',
-    'Customized fertilizer recommendations',
-    'Yield prediction and analytics',
-    'Weather-based insights',
+    'Helps Benguet farmers grow cabbage and potatoes more efficiently using technology.,
+    'Helps improve yields, reduces waste, and increases profits by managing soil, water, and nutrients better.',
+   
   ];
 
   return (
