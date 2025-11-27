@@ -8,7 +8,7 @@ export const ValueProposition = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const features = [
-    'Helps Benguet farmers grow cabbage and potatoes more efficiently using technology.,
+    'Helps Benguet farmers grow cabbage and potatoes more efficiently using technology.',
     'Helps improve yields, reduces waste, and increases profits by managing soil, water, and nutrients better.',
    
   ];
