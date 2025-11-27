@@ -58,7 +58,7 @@ export const Hero = () => {
                 to="/calculator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-eabono-gold/20 backdrop-blur-sm border-2 border-eabono-gold text-eabono-gold font-semibold rounded-full hover:bg-eabono-gold hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                See All Service
+                Open Calculator
                 <ArrowRight size={20} />
               </Link>
             </motion.div>
