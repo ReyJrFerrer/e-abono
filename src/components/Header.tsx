@@ -6,6 +6,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,11 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-eabono-green/95 backdrop-blur-md shadow-lg' : 'bg-eabono-green/30 backdrop-blur-sm'
+        !isHomePage
+          ? 'bg-eabono-green backdrop-blur-md shadow-lg'
+          : isScrolled
+            ? 'bg-eabono-green/95 backdrop-blur-md shadow-lg'
+            : 'bg-eabono-green/30 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6">
