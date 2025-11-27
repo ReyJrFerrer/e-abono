@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 
@@ -7,103 +6,139 @@ export const ValueProposition = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const features = [
-    'Helps Benguet farmers grow cabbage and potatoes more efficiently using technology.',
-    'Helps improve yields, reduces waste, and increases profits by managing soil, water, and nutrients better.',
-  ];
-
   return (
-    <section className="py-24 bg-white overflow-hidden" ref={ref}>
+    <section className="py-24 bg-gray-50 overflow-hidden" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: -80, rotateY: -15 }}
-            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : { opacity: 0, x: -80, rotateY: -15 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative group"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-eabono-green-light via-eabono-green to-eabono-green-light rounded-full shadow-lg"></div>
-
             <motion.div
-              className="relative"
+              className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
               whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.4 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-eabono-green/20 to-eabono-gold/20 rounded-2xl blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-eabono-green/10 to-transparent rounded-3xl"></div>
               <img
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80"
-                alt="Farmer using E-Abono app in field"
-                className="relative rounded-2xl shadow-2xl w-full h-[550px] object-cover transform hover:shadow-3xl transition-shadow duration-300"
+                src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80"
+                alt="Benguet vegetable farming"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-eabono-gold rounded-full opacity-20 blur-2xl"></div>
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-eabono-green-light rounded-full opacity-20 blur-2xl"></div>
+
+              <motion.div
+                className="absolute top-8 left-8 right-8"
+                initial={{ opacity: 0, y: -20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+                  YOU GOT A TICKET TO THE
+                  <br />
+                  <span className="text-5xl md:text-6xl lg:text-7xl">GREEN PARADISE</span>
+                </h3>
+              </motion.div>
+
+              <motion.div
+                className="absolute bottom-8 right-8 text-white text-sm font-medium drop-shadow-md"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                Enjoy Nature
+              </motion.div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative group"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-eabono-green mb-10 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              Supports Farmers crop growth through efficient technology
-            </motion.h2>
-
-            <ul className="space-y-5 mb-10">
-              {features.map((feature, index) => (
-                <motion.li
-                  key={index}
-                  className="flex items-start gap-4 group"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.4 + index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ x: 10 }}
-                >
-                  <motion.div
-                    className="flex-shrink-0 mt-0.5"
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: 0.5 + index * 0.1,
-                      type: "spring",
-                      stiffness: 200
-                    }}
-                  >
-                    <div className="w-8 h-8 rounded-full bg-eabono-gold/10 flex items-center justify-center group-hover:bg-eabono-gold/20 transition-colors duration-300">
-                      <ChevronRight className="text-eabono-gold" size={20} />
-                    </div>
-                  </motion.div>
-                  <span className="text-lg text-gray-700 group-hover:text-eabono-green transition-colors duration-300 font-medium">
-                    {feature}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
+              className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gray-100"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
             >
-              <Link
-                to="/about-us"
-                className="inline-block bg-eabono-gold text-white px-10 py-4 rounded-xl font-semibold hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-eabono-gold/10 rounded-3xl"></div>
+              <img
+                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80"
+                alt="Sustainable farming in Benguet"
+                className="w-full h-full object-cover"
+              />
+
+              <motion.div
+                className="absolute inset-0 flex flex-col items-center justify-center text-center px-8"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Learn More
-              </Link>
+                <motion.div
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <div className="inline-block bg-white/95 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-xl">
+                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                      TOUCH<br />
+                      <span className="text-eabono-green">THE WORLD OF</span><br />
+                      <span className="text-eabono-green-light">AGRICULTURE</span>
+                    </h3>
+                  </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
+
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          <div className="max-w-4xl mx-auto mb-10">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-eabono-green mb-8 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              Empowering Benguet Farmers Through Smart Technology
+            </motion.h2>
+
+            <motion.div
+              className="space-y-6 text-lg text-gray-700 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <p className="font-medium">
+                E-Abono helps Benguet farmers grow cabbage and potatoes more efficiently using precision agriculture technology and AI-powered insights.
+              </p>
+              <p>
+                Our platform improves crop yields, reduces waste, and increases profits by optimizing soil health, water management, and nutrient application for sustainable farming success.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            <Link
+              to="/about-us"
+              className="inline-block bg-eabono-gold text-white px-10 py-4 rounded-xl font-semibold hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"
+            >
+              Learn More
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
