@@ -25,10 +25,10 @@ export const ContactUs = () => {
       style: {
         version: 8,
         sources: {
-          'maptiler': {
+          'satellite': {
             type: 'raster',
             tiles: [
-              'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=q8lDMWkPklOWrDhWR0bf'
+              'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=q8lDMWkPklOWrDhWR0bf'
             ],
             tileSize: 256,
             attribution: '© MapTiler © OpenStreetMap contributors'
@@ -36,21 +36,21 @@ export const ContactUs = () => {
         },
         layers: [
           {
-            id: 'maptiler-layer',
+            id: 'satellite-layer',
             type: 'raster',
-            source: 'maptiler',
+            source: 'satellite',
             minzoom: 0,
             maxzoom: 22
           }
         ]
       },
-      center: [120.5962463, 16.4604268],
-      zoom: 15,
+      center: [120.5903, 16.4418],
+      zoom: 16,
     });
 
     map.current.on('load', () => {
       new maplibregl.Marker({ color: '#7c9a3d' })
-        .setLngLat([120.5962463, 16.4604268])
+        .setLngLat([120.5903, 16.4418])
         .setPopup(
           new maplibregl.Popup().setHTML(
             '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
@@ -114,7 +114,7 @@ export const ContactUs = () => {
         <section className="py-16">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
                 <div className="bg-gradient-to-r from-eabono-green to-eabono-green-light p-6">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
@@ -127,7 +127,7 @@ export const ContactUs = () => {
                   </div>
                   <p className="text-white/80 text-sm">Find us at Benguet State University</p>
                 </div>
-                <div ref={mapContainer} className="h-[500px] w-full" />
+                <div ref={mapContainer} className="flex-1 min-h-[500px] w-full" />
               </div>
 
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
