@@ -82,7 +82,7 @@ export const Header = () => {
             to="/contact-us"
             className="hidden md:flex items-center gap-2 bg-eabono-green-light text-white px-6 py-3 rounded-full font-semibold hover:bg-eabono-green-light/90 transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            Get Started Now
+            Contact Us
             <ArrowRight size={18} />
           </Link>
 
