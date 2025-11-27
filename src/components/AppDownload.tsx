@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Download } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 
 export const AppDownload = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 bg-eabono-green">
+    <section className="py-20 bg-eabono-green" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="relative">
               <div className="w-72 h-[580px] bg-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-800">
                 <div className="w-full h-full bg-white flex flex-col items-center justify-center p-8">
@@ -26,9 +35,14 @@ export const AppDownload = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="text-white">
+          <motion.div
+            className="text-white"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Scan the QR Code to Download E-Abono
             </h2>
@@ -40,7 +54,7 @@ export const AppDownload = () => {
               <Download size={24} />
               Download Now
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

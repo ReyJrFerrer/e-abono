@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Header = () => {
@@ -32,7 +32,7 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-eabono-green shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-eabono-green/95 backdrop-blur-md shadow-lg' : 'bg-eabono-green/30 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6">
@@ -74,9 +74,10 @@ export const Header = () => {
 
           <Link
             to="/contact-us"
-            className="hidden md:block bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+            className="hidden md:flex items-center gap-2 bg-eabono-green-light text-white px-6 py-3 rounded-full font-semibold hover:bg-eabono-green-light/90 transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            Contact Us
+            Get Started Now
+            <ArrowRight size={18} />
           </Link>
 
           <button
@@ -118,10 +119,11 @@ export const Header = () => {
             )}
             <Link
               to="/contact-us"
-              className="bg-white text-eabono-green px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-left"
+              className="flex items-center gap-2 bg-eabono-green-light text-white px-6 py-3 rounded-full font-semibold hover:bg-eabono-green-light/90 transition-all duration-300 shadow-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact Us
+              Get Started Now
+              <ArrowRight size={18} />
             </Link>
           </nav>
         </div>

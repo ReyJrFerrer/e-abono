@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useInView } from 'framer-motion';
 
 interface ProjectCardProps {
   title: string;
@@ -30,6 +31,9 @@ const ProjectCard = ({ title, description, imageUrl }: ProjectCardProps) => {
 };
 
 export const ProjectSites = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const projects = [
     {
       title: 'La Trinidad',
@@ -49,25 +53,36 @@ export const ProjectSites = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-eabono-green mb-4">
             Project Sites
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover how E-Abono is transforming agriculture across Benguet province through innovative technology and community partnerships.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard
+            <motion.div
               key={index}
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-            />
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

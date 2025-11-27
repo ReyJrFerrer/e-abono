@@ -1,42 +1,84 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-cover bg-center"
+      className="relative min-h-screen flex items-center bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80')`,
       }}
     >
-      <div className="container mx-auto px-6 py-20">
+      <div className="absolute inset-0 bg-gradient-to-r from-eabono-green/20 to-transparent"></div>
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid md:grid-cols-5 gap-12 items-center">
-          <div className="md:col-span-3">
-            <h1 className="text-5xl md:text-7xl font-bold text-white uppercase tracking-tight mb-6">
-              PRECISION AGRICULTURE
-            </h1>
-            <div className="w-24 h-1 bg-eabono-gold mb-6"></div>
-            <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed">
+          <motion.div
+            className="md:col-span-3"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 bg-eabono-gold/20 border border-eabono-gold/50 rounded-full mb-6 backdrop-blur-sm"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span className="text-eabono-gold text-sm font-semibold">We are Producing Natural Products</span>
+            </motion.div>
+
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Organic Farming
+              <br />
+              <span className="text-white">and Agriculture</span>
+            </motion.h1>
+
+            <motion.p
+              className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               Enhancing productivity and profitability for farmers in Benguet through innovative agricultural technology and sustainable farming practices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
               <Link
                 to="/about-us"
-                className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-eabono-green transition-all duration-300 text-center"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Learn More
+                Discover More
+                <ChevronRight size={20} />
               </Link>
               <Link
                 to="/calculator"
-                className="px-8 py-3 bg-white text-eabono-green font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 text-center"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-eabono-gold/20 backdrop-blur-sm border-2 border-eabono-gold text-eabono-gold font-semibold rounded-full hover:bg-eabono-gold hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Open Calculator
+                See All Service
+                <ArrowRight size={20} />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="md:col-span-2 flex justify-center">
+          <motion.div
+            className="md:col-span-2 flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
             <div className="relative">
               <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
                 <div className="w-full h-full bg-gradient-to-br from-eabono-green-light to-eabono-green flex flex-col items-center justify-center p-6">
@@ -60,7 +102,7 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
