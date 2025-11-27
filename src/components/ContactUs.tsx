@@ -51,7 +51,7 @@ export const ContactUs = () => {
 
     map.current.on('load', () => {
       new maplibregl.Marker({ color: '#7c9a3d' })
-        .setLngLat([120.59032, 16.44188])
+        .setLngLat([120.5902746, 16.4543609])
         .setPopup(
           new maplibregl.Popup().setHTML(
             '<div style="padding: 8px;"><strong>Benguet State University</strong><br/>La Trinidad, Benguet</div>'
