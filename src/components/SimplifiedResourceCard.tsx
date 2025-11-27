@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download } from 'lucide-react';
+import { Download, FileText } from 'lucide-react';
 
 interface SimplifiedResourceCardProps {
   title: string;
@@ -11,17 +11,23 @@ export const SimplifiedResourceCard = ({
   description,
 }: SimplifiedResourceCardProps) => {
   return (
-    <div className="bg-gray-200 rounded-xl shadow-md p-8">
-      <h3 className="text-2xl font-bold text-eabono-green mb-4">{title}</h3>
+    <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-10 hover:shadow-xl transition-all duration-300 border border-gray-100 group h-full flex flex-col">
+      <div className="flex items-start gap-4 mb-6">
+        <div className="w-12 h-12 bg-eabono-green/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-eabono-green/20 transition-colors duration-300">
+          <FileText size={24} className="text-eabono-green" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-2xl font-bold text-eabono-green mb-2">{title}</h3>
+          <div className="w-16 h-1 bg-eabono-gold rounded-full"></div>
+        </div>
+      </div>
 
-      <div className="w-full h-px bg-gray-700 mb-6"></div>
+      <p className="text-gray-700 mb-8 leading-relaxed flex-grow">{description}</p>
 
-      <p className="text-gray-700 mb-8 leading-relaxed">{description}</p>
-
-      <div className="flex justify-end">
-        <button className="bg-eabono-green-light text-white px-8 py-3 rounded-lg font-semibold hover:bg-eabono-green transition-all duration-300 flex items-center gap-2 shadow-md">
+      <div className="flex justify-end mt-auto">
+        <button className="bg-eabono-green-light text-white px-8 py-3 rounded-xl font-bold hover:bg-eabono-green transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg hover:scale-105">
           <Download size={20} />
-          Download PDF
+          Download Guide
         </button>
       </div>
     </div>

@@ -33,27 +33,53 @@ export const CropPage = ({
   fertilizationResources,
 }: CropPageProps) => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <main className="pt-20">
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-eabono-green mb-12">
-              {cropName} Project Resources
+        <section
+          className="relative py-32 bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${locationResources[0]?.imageUrl}')`,
+          }}
+        >
+          <div className="container mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              {cropName} Resources
             </h1>
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              Comprehensive farming guides and project data across Benguet's diverse landscapes
+            </p>
+          </div>
+        </section>
 
-            <div className="space-y-8">
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <div className="mb-12">
+              <h2 className="text-4xl font-bold text-eabono-green mb-4">
+                Project Sites
+              </h2>
+              <p className="text-gray-600 text-lg">
+                Explore our {cropName.toLowerCase()} cultivation projects across different terrains and climates
+              </p>
+            </div>
+
+            <div className="space-y-12">
               {locationResources.map((resource, index) => (
                 <CropResourceCard key={index} {...resource} />
               ))}
             </div>
 
             {fertilizationResources && fertilizationResources.length > 0 && (
-              <div className="mt-16">
-                <h2 className="text-3xl font-bold text-eabono-green mb-8">
-                  Fertilization Resources
-                </h2>
-                <div className="space-y-8">
+              <div className="mt-20">
+                <div className="mb-12">
+                  <h2 className="text-4xl font-bold text-eabono-green mb-4">
+                    Fertilization Guides
+                  </h2>
+                  <p className="text-gray-600 text-lg">
+                    Expert recommendations for optimal nutrient management
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8">
                   {fertilizationResources.map((resource, index) => (
                     <SimplifiedResourceCard key={index} {...resource} />
                   ))}
