@@ -19,12 +19,13 @@ export const Header = () => {
   const navLinks = [
     { label: 'Home', href: '/', isRoute: true },
     { label: 'Calculator', href: '/calculator', isRoute: true },
-    { label: 'Crops', href: '#crops', isRoute: false },
+    { label: 'Crops', href: '/crops', isRoute: true },
     { label: 'About Us', href: '#about', isRoute: false },
   ];
 
   const isActive = (href: string) => {
     if (href === '/') return location.pathname === '/';
+    if (href === '/crops') return location.pathname.startsWith('/crops');
     return location.pathname === href;
   };
 
