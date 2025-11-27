@@ -38,9 +38,11 @@ export const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-eabono-green-light rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
-            </div>
+            <img
+              src="/image.png"
+              alt="E-Abono Logo"
+              className="w-12 h-12 object-contain"
+            />
             <span className="text-white font-bold text-xl">E-Abono</span>
           </Link>
 
