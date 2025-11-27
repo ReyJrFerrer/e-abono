@@ -170,7 +170,7 @@ export const AppDownload = () => {
             <p className="text-xl mb-8 leading-relaxed">
               Smart Snap, Grow Right: AI-Powered Nitrogen Detection for Healthier Crops and Better Yields. Transform your farming with instant crop analysis right from your smartphone.
             </p>
-            <button className="bg-eabono-gold text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3">
+            <button className="bg-eabono-gold/20 backdrop-blur-sm border-2 border-eabono-gold text-eabono-gold px-10 py-4 rounded-full font-bold text-lg hover:bg-eabono-gold hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3">
               <Download size={24} />
               Download Now
             </button>
