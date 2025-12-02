@@ -218,16 +218,16 @@ export const Calculator = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center justify-between bg-white rounded-2xl shadow-xl p-6">
-              <p className="text-sm text-gray-500">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-2xl shadow-xl p-6">
+              <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
                 <span className="text-red-500">*</span> All fields are required
               </p>
               <button
                 onClick={handleCalculate}
-                className="bg-eabono-gold text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3"
+                className="bg-eabono-gold text-white w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-eabono-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3"
               >
                 Calculate
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </button>

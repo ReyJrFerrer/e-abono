@@ -119,27 +119,27 @@ export const AboutUs = () => {
         </section>
 
         <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-eabono-green mb-12 text-center">
+          <div className="container mx-auto px-6 overflow-hidden">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-eabono-green mb-8 md:mb-12 text-center">
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-6xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 justify-items-center">
+            <div className="relative max-w-6xl mx-auto px-8 md:px-0">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full max-w-sm"
+                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full"
                   >
                     <img
                       src={member.imageUrl}
                       alt={member.name}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-6">
                       <div className="text-white">
-                        <h3 className="font-bold text-xl mb-1">{member.name}</h3>
-                        <p className="text-gray-200 text-sm">{member.role}</p>
+                        <h3 className="font-bold text-sm sm:text-base md:text-xl mb-1">{member.name}</h3>
+                        <p className="text-gray-200 text-xs md:text-sm">{member.role}</p>
                       </div>
                     </div>
                   </div>
@@ -150,20 +150,20 @@ export const AboutUs = () => {
                 <>
                   <button
                     onClick={prevSlide}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -left-3 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
-                    <ChevronLeft size={24} />
+                    <ChevronLeft size={20} className="md:w-6 md:h-6" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 bg-eabono-green text-white p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -right-3 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Next slide"
                   >
-                    <ChevronRight size={24} />
+                    <ChevronRight size={20} className="md:w-6 md:h-6" />
                   </button>
 
-                  <div className="flex justify-center gap-2 mt-8">
+                  <div className="flex justify-center gap-2 mt-6 md:mt-8">
                     {Array.from({ length: slidesCount }).map((_, index) => (
                       <button
                         key={index}
