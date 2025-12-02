@@ -61,7 +61,7 @@ export const Footer = () => {
                   <Link
                     to={link.href}
                     onClick={() => handleLinkClick(link.href)}
-                    className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
+                    className="text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                   >
                     {link.label}
                   </Link>
@@ -78,7 +78,7 @@ export const Footer = () => {
                   {link.href.startsWith('/#') ? (
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
+                      className="text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                     >
                       {link.label}
                     </a>
@@ -86,7 +86,7 @@ export const Footer = () => {
                     <Link
                       to={link.href}
                       onClick={() => handleLinkClick(link.href)}
-                      className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
+                      className="text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                     >
                       {link.label}
                     </Link>
@@ -128,7 +128,7 @@ export const Footer = () => {
                 <a
                   key={index}
                   href={link.href}
-                  className="text-gray-400 text-sm hover:text-eabono-gold transition-colors duration-200"
+                  className="text-gray-400 text-sm hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                 >
                   {link.label}
                 </a>

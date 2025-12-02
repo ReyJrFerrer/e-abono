@@ -65,10 +65,10 @@ export const Header = () => {
                   key={link.label}
                   to={link.href}
                   onClick={() => handleLinkClick(link.href)}
-                  className={`transition-colors duration-200 ${
+                  className={`transition-all duration-200 border-b-2 border-transparent ${
                     isActive(link.href)
-                      ? 'text-eabono-gold font-semibold'
-                      : 'text-white hover:text-eabono-gold'
+                      ? 'text-eabono-gold font-semibold border-eabono-gold'
+                      : 'text-white hover:text-eabono-gold hover:font-semibold hover:border-eabono-gold'
                   }`}
                 >
                   {link.label}
@@ -77,7 +77,7 @@ export const Header = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-white hover:text-eabono-gold transition-colors duration-200"
+                  className="text-white hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold"
                 >
                   {link.label}
                 </a>
@@ -111,10 +111,10 @@ export const Header = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className={`transition-colors duration-200 ${
+                  className={`transition-all duration-200 border-b-2 border-transparent pb-1 ${
                     isActive(link.href)
-                      ? 'text-eabono-gold font-semibold'
-                      : 'text-white hover:text-eabono-gold'
+                      ? 'text-eabono-gold font-semibold border-eabono-gold'
+                      : 'text-white hover:text-eabono-gold hover:font-semibold hover:border-eabono-gold'
                   }`}
                   onClick={() => {
                     handleLinkClick(link.href);
@@ -127,7 +127,7 @@ export const Header = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-white hover:text-eabono-gold transition-colors duration-200"
+                  className="text-white hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
