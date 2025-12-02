@@ -96,22 +96,18 @@ export const AboutUs = () => {
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-eabono-green mb-8">About E-Abono</h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <div>
-                <p className="text-gray-700 leading-relaxed">
-                  E-Abono is a groundbreaking agricultural technology initiative designed to revolutionize farming practices in the Cordillera region. Through cutting-edge AI-powered nitrogen detection and precision agriculture techniques, we provide farmers with the tools they need to optimize crop yields while maintaining environmental sustainability.
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-700 leading-relaxed">
-                  Our platform combines mobile technology, data analytics, and on-the-ground expertise to deliver real-time insights and actionable recommendations. By bridging the gap between traditional farming knowledge and modern agricultural science, E-Abono empowers local communities to thrive in an increasingly competitive agricultural landscape.
-                </p>
-              </div>
+            <h2 className="text-4xl font-bold text-eabono-green mb-8 text-center">About E-Abono</h2>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <p className="text-gray-700 leading-relaxed mb-6">
+                E-Abono is a groundbreaking agricultural technology initiative designed to revolutionize farming practices in the Cordillera region. Through cutting-edge AI-powered nitrogen detection and precision agriculture techniques, we provide farmers with the tools they need to optimize crop yields while maintaining environmental sustainability.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Our platform combines mobile technology, data analytics, and on-the-ground expertise to deliver real-time insights and actionable recommendations. By bridging the gap between traditional farming knowledge and modern agricultural science, E-Abono empowers local communities to thrive in an increasingly competitive agricultural landscape.
+              </p>
             </div>
 
-            <h2 className="text-4xl font-bold text-eabono-green mb-8">Mission and Vision</h2>
-            <div className="max-w-4xl mx-auto text-center md:text-center">
+            <h2 className="text-4xl font-bold text-eabono-green mb-8 text-center">Mission and Vision</h2>
+            <div className="max-w-4xl mx-auto text-center">
               <p className="text-gray-700 leading-relaxed mb-6">
                 Our mission is to transform agricultural practices in Benguet province by providing farmers with accessible, science-based tools for crop management. We strive to increase agricultural productivity, improve farmer livelihoods, and promote sustainable farming practices that protect our natural resources for future generations.
               </p>
