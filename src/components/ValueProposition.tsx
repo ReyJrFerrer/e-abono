@@ -14,9 +14,9 @@ export const ValueProposition = () => {
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden" ref={ref}>
+    <section className="py-12 md:py-20 lg:py-24 bg-white overflow-hidden" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -80, rotateY: -15 }}
@@ -34,7 +34,7 @@ export const ValueProposition = () => {
               <img
                 src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80"
                 alt="Farmer using E-Abono app in field"
-                className="relative rounded-2xl shadow-2xl w-full h-[550px] object-cover transform hover:shadow-3xl transition-shadow duration-300"
+                className="relative rounded-2xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[550px] object-cover transform hover:shadow-3xl transition-shadow duration-300"
               />
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-eabono-gold rounded-full opacity-20 blur-2xl"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-eabono-green-light rounded-full opacity-20 blur-2xl"></div>
@@ -47,7 +47,7 @@ export const ValueProposition = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-eabono-green mb-10 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-eabono-green mb-6 md:mb-8 lg:mb-10 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -55,7 +55,7 @@ export const ValueProposition = () => {
               Supports Farmers crop growth through efficient technology
             </motion.h2>
 
-            <ul className="space-y-5 mb-10">
+            <ul className="space-y-3 md:space-y-4 lg:space-y-5 mb-6 md:mb-8 lg:mb-10">
               {features.map((feature, index) => (
                 <motion.li
                   key={index}
@@ -84,7 +84,7 @@ export const ValueProposition = () => {
                       <ChevronRight className="text-eabono-gold" size={20} />
                     </div>
                   </motion.div>
-                  <span className="text-lg text-gray-700 group-hover:text-eabono-green transition-colors duration-300 font-medium">
+                  <span className="text-sm sm:text-base md:text-lg text-gray-700 group-hover:text-eabono-green transition-colors duration-300 font-medium">
                     {feature}
                   </span>
                 </motion.li>

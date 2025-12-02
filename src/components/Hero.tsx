@@ -71,24 +71,24 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <div className="relative">
-              <div className="w-64 h-[520px] bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-900">
-                <div className="w-full h-full bg-white flex flex-col items-center p-8 relative">
-                  <div className="flex flex-col items-center mt-6">
-                    <div className="w-36 h-36 flex items-center justify-center mb-4">
+              <div className="w-48 h-[400px] sm:w-56 sm:h-[460px] md:w-64 md:h-[520px] bg-gray-800 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl overflow-hidden border-4 md:border-8 border-gray-900">
+                <div className="w-full h-full bg-white flex flex-col items-center p-4 sm:p-6 md:p-8 relative">
+                  <div className="flex flex-col items-center mt-3 sm:mt-4 md:mt-6">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
                       <img src="/image.png" alt="E-Abono Logo" className="w-full h-full object-contain" />
                     </div>
-                    <h2 className="text-gray-900 text-4xl font-bold mb-1 tracking-tight">E-Abono</h2>
+                    <h2 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl font-bold mb-1 tracking-tight">E-Abono</h2>
                   </div>
 
-                  <div className="flex-1 flex items-center justify-center px-6">
-                    <p className="text-[#2D5C1E] text-center text-base font-semibold leading-relaxed">
+                  <div className="flex-1 flex items-center justify-center px-3 sm:px-4 md:px-6">
+                    <p className="text-[#2D5C1E] text-center text-xs sm:text-sm md:text-base font-semibold leading-relaxed">
                       Support our Local farmers crop growth with sustainable technology
                     </p>
                   </div>
 
-                  <div className="flex justify-center items-end gap-8 pb-6">
-                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-20 w-auto object-contain" />
-                    <img src="/Approved-BSU-logo-2020.png.png" alt="BSU" className="h-20 w-auto object-contain" />
+                  <div className="flex justify-center items-end gap-4 sm:gap-6 md:gap-8 pb-3 sm:pb-4 md:pb-6">
+                    <img src="/bagong-pilipinas-v4.png" alt="Bagong Pilipinas" className="h-12 sm:h-16 md:h-20 w-auto object-contain" />
+                    <img src="/Approved-BSU-logo-2020.png.png" alt="BSU" className="h-12 sm:h-16 md:h-20 w-auto object-contain" />
                   </div>
                 </div>
               </div>

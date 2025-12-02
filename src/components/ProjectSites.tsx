@@ -11,15 +11,15 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, imageUrl }: ProjectCardProps) => {
   return (
-    <div className="relative group overflow-hidden rounded-xl shadow-lg h-[400px] cursor-pointer">
+    <div className="relative group overflow-hidden rounded-xl shadow-lg h-[280px] sm:h-[340px] md:h-[380px] lg:h-[400px] cursor-pointer">
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
         style={{ backgroundImage: `url('${imageUrl}')` }}
       ></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition-all duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-        <h3 className="text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-gray-200 mb-4 line-clamp-2">{description}</p>
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white">
+        <h3 className="text-xl sm:text-xl md:text-2xl font-bold mb-2 md:mb-3">{title}</h3>
+        <p className="text-sm sm:text-base text-gray-200 mb-3 md:mb-4 line-clamp-2">{description}</p>
         <Link
           to="/about-us"
           className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
@@ -55,23 +55,23 @@ export const ProjectSites = () => {
   ];
 
   return (
-    <section className="py-20 bg-white" ref={ref}>
+    <section className="py-12 md:py-16 lg:py-20 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-eabono-green mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-eabono-green mb-3 md:mb-4">
             Project Sites
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Discover how E-Abono is transforming agriculture across Benguet province through innovative technology and community partnerships.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
