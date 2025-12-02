@@ -12,7 +12,7 @@ export const Footer = () => {
   const resourceLinks = [
     { label: 'About Us', href: '/about-us' },
     { label: 'Contact Us', href: '/contact-us' },
-    { label: 'Project Sites', href: '/#project-sites' },
+    { label: 'Project Sites', href: '/crops' },
   ];
 
   const legalLinks = [
