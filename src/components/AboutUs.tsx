@@ -129,11 +129,11 @@ export const AboutUs = () => {
             </h2>
 
             <div className="relative max-w-6xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 justify-items-center md:justify-center md:flex md:flex-wrap">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full max-w-sm md:w-64"
+                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full max-w-sm"
                   >
                     <img
                       src={member.imageUrl}
