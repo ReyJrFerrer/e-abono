@@ -31,6 +31,12 @@ export const Header = () => {
     return location.pathname === href;
   };
 
+  const handleLinkClick = (href: string) => {
+    if (isActive(href)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -58,6 +64,7 @@ export const Header = () => {
                 <Link
                   key={link.label}
                   to={link.href}
+                  onClick={() => handleLinkClick(link.href)}
                   className={`transition-colors duration-200 ${
                     isActive(link.href)
                       ? 'text-eabono-gold font-semibold'
@@ -80,6 +87,7 @@ export const Header = () => {
 
           <Link
             to="/contact-us"
+            onClick={() => handleLinkClick('/contact-us')}
             className="hidden md:flex items-center gap-2 bg-eabono-green-light text-white px-6 py-3 rounded-full font-semibold hover:bg-eabono-green-light/90 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Contact Us
@@ -108,7 +116,10 @@ export const Header = () => {
                       ? 'text-eabono-gold font-semibold'
                       : 'text-white hover:text-eabono-gold'
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    handleLinkClick(link.href);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   {link.label}
                 </Link>
@@ -126,7 +137,10 @@ export const Header = () => {
             <Link
               to="/contact-us"
               className="flex items-center gap-2 bg-eabono-green-light text-white px-6 py-3 rounded-full font-semibold hover:bg-eabono-green-light/90 transition-all duration-300 shadow-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                handleLinkClick('/contact-us');
+                setIsMobileMenuOpen(false);
+              }}
             >
               Get Started Now
               <ArrowRight size={18} />

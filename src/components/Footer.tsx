@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Globe } from 'lucide-react';
 
 export const Footer = () => {
+  const location = useLocation();
+
   const websiteLinks = [
     { label: 'Home', href: '/' },
     { label: 'Calculator', href: '/calculator' },
@@ -20,6 +22,18 @@ export const Footer = () => {
     { label: 'Disclosure', href: '/' },
     { label: 'Privacy Policy', href: '/' },
   ];
+
+  const isCurrentPage = (href: string) => {
+    if (href === '/') return location.pathname === '/';
+    if (href === '/crops') return location.pathname.startsWith('/crops');
+    return location.pathname === href;
+  };
+
+  const handleLinkClick = (href: string) => {
+    if (isCurrentPage(href)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-[#152711] text-white">
@@ -46,6 +60,7 @@ export const Footer = () => {
                 <li key={index}>
                   <Link
                     to={link.href}
+                    onClick={() => handleLinkClick(link.href)}
                     className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
                   >
                     {link.label}
@@ -70,6 +85,7 @@ export const Footer = () => {
                   ) : (
                     <Link
                       to={link.href}
+                      onClick={() => handleLinkClick(link.href)}
                       className="text-gray-400 hover:text-eabono-gold transition-colors duration-200"
                     >
                       {link.label}
