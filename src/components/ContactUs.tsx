@@ -45,7 +45,7 @@ export const ContactUs = () => {
           }
         ]
       },
-      center: [120.5955, 16.4765],
+      center: [120.5902746, 16.4543609],
       zoom: 17,
       minZoom: 14,
       maxZoom: 19,
