@@ -65,10 +65,10 @@ export const Header = () => {
                   key={link.label}
                   to={link.href}
                   onClick={() => handleLinkClick(link.href)}
-                  className={`transition-all duration-200 border-b-2 border-transparent ${
+                  className={`transition-all duration-200 border-b-2 pb-1 ${
                     isActive(link.href)
                       ? 'text-eabono-gold font-semibold border-eabono-gold'
-                      : 'text-white hover:text-eabono-gold hover:font-semibold hover:border-eabono-gold'
+                      : 'text-white hover:text-eabono-gold hover:font-semibold border-transparent hover:border-eabono-gold'
                   }`}
                 >
                   {link.label}
