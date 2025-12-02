@@ -47,6 +47,12 @@ export const ContactUs = () => {
       },
       center: [120.5955, 16.4765],
       zoom: 17,
+      minZoom: 14,
+      maxZoom: 19,
+      maxBounds: [
+        [120.5500, 16.4200],
+        [120.6400, 16.5200]
+      ]
     });
 
     map.current.on('load', () => {
