@@ -12,11 +12,14 @@ export const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { label: 'Home', href: '/', isRoute: true },
