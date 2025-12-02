@@ -111,7 +111,7 @@ export const AboutUs = () => {
             </div>
 
             <h2 className="text-4xl font-bold text-eabono-green mb-8">Mission and Vision</h2>
-            <div className="max-w-4xl">
+            <div className="max-w-4xl mx-auto text-center md:text-center">
               <p className="text-gray-700 leading-relaxed mb-6">
                 Our mission is to transform agricultural practices in Benguet province by providing farmers with accessible, science-based tools for crop management. We strive to increase agricultural productivity, improve farmer livelihoods, and promote sustainable farming practices that protect our natural resources for future generations.
               </p>
