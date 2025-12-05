@@ -21,7 +21,7 @@ const ProjectCard = ({ title, description, imageUrl }: ProjectCardProps) => {
         <h3 className="text-xl sm:text-xl md:text-2xl font-bold mb-2 md:mb-3">{title}</h3>
         <p className="text-sm sm:text-base text-gray-200 mb-3 md:mb-4 line-clamp-2">{description}</p>
         <Link
-          to="/about-us"
+          to="/crops"
           className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-eabono-green-light text-white font-semibold rounded-full hover:bg-eabono-green-light/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
         >
           Learn More
