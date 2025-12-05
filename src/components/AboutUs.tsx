@@ -144,7 +144,7 @@ export const AboutUs = () => {
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-6xl mx-auto px-12 sm:px-12 md:px-0">
+            <div className="relative max-w-6xl mx-auto px-4 sm:px-12 md:px-0">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
@@ -167,23 +167,16 @@ export const AboutUs = () => {
               </div>
 
               {slidesCount > 1 && (
-                <>
+                <div className="flex items-center justify-center gap-4 mt-6 md:mt-8">
                   <button
                     onClick={prevSlide}
-                    className="absolute left-1 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="md:absolute md:-left-16 md:top-1/2 md:-translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft size={20} className="md:w-6 md:h-6" />
                   </button>
-                  <button
-                    onClick={nextSlide}
-                    className="absolute right-1 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
-                    aria-label="Next slide"
-                  >
-                    <ChevronRight size={20} className="md:w-6 md:h-6" />
-                  </button>
 
-                  <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                  <div className="flex justify-center gap-2">
                     {Array.from({ length: slidesCount }).map((_, index) => (
                       <button
                         key={index}
@@ -194,7 +187,15 @@ export const AboutUs = () => {
                       />
                     ))}
                   </div>
-                </>
+
+                  <button
+                    onClick={nextSlide}
+                    className="md:absolute md:-right-16 md:top-1/2 md:-translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    aria-label="Next slide"
+                  >
+                    <ChevronRight size={20} className="md:w-6 md:h-6" />
+                  </button>
+                </div>
               )}
             </div>
           </div>
