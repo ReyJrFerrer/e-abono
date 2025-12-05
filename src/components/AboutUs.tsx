@@ -129,19 +129,18 @@ export const AboutUs = () => {
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group w-full"
+                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full"
                   >
-                    <div className="relative aspect-square overflow-hidden rounded-t-lg shadow-lg">
-                      <img
-                        src={member.imageUrl}
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div className="bg-white rounded-b-lg shadow-lg p-4 text-center">
-                      <h3 className="font-bold text-base md:text-lg text-eabono-green mb-1">{member.name}</h3>
-                      <p className="text-gray-600 text-sm">{member.role}</p>
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
+                      <div className="text-white">
+                        <h3 className="font-bold text-base sm:text-lg md:text-xl mb-1">{member.name}</h3>
+                        <p className="text-gray-200 text-sm md:text-base">{member.role}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -151,14 +150,14 @@ export const AboutUs = () => {
                 <>
                   <button
                     onClick={prevSlide}
-                    className="absolute -left-3 md:-left-16 top-[35%] md:top-1/3 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -left-3 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft size={20} className="md:w-6 md:h-6" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute -right-3 md:-right-16 top-[35%] md:top-1/3 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -right-3 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Next slide"
                   >
                     <ChevronRight size={20} className="md:w-6 md:h-6" />
