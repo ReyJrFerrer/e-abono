@@ -85,7 +85,7 @@ export const CropsLanding = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 gap-10 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
               {crops.map((crop, index) => (
                 <CropCard key={index} {...crop} />
               ))}
