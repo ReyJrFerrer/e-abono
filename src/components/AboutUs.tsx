@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Header } from './Header';
 import { AppDownload } from './AppDownload';
@@ -12,6 +12,24 @@ interface TeamMember {
 
 export const AboutUs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const wasMobile = isMobile;
+      const nowMobile = window.innerWidth < 768;
+      setIsMobile(nowMobile);
+
+      if (wasMobile !== nowMobile) {
+        setCurrentSlide(0);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [isMobile]);
 
   const teamMembers: TeamMember[] = [
     {
@@ -61,7 +79,8 @@ export const AboutUs = () => {
     },
   ];
 
-  const slidesCount = Math.ceil(teamMembers.length / 6);
+  const itemsPerSlide = isMobile ? 2 : 6;
+  const slidesCount = Math.ceil(teamMembers.length / itemsPerSlide);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesCount);
@@ -72,8 +91,8 @@ export const AboutUs = () => {
   };
 
   const getCurrentSlideMembers = () => {
-    const startIndex = currentSlide * 6;
-    return teamMembers.slice(startIndex, startIndex + 6);
+    const startIndex = currentSlide * itemsPerSlide;
+    return teamMembers.slice(startIndex, startIndex + itemsPerSlide);
   };
 
   return (
@@ -125,7 +144,7 @@ export const AboutUs = () => {
             </h2>
 
             <div className="relative max-w-6xl mx-auto px-2 sm:px-8 md:px-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
