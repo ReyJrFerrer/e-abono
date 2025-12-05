@@ -143,22 +143,22 @@ export const AboutUs = () => {
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-6xl mx-auto px-2 sm:px-8 md:px-0">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full"
+                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full max-w-sm"
                   >
                     <img
                       src={member.imageUrl}
                       alt={member.name}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 md:p-8">
                       <div className="text-white">
-                        <h3 className="font-bold text-base sm:text-lg md:text-xl mb-1">{member.name}</h3>
-                        <p className="text-gray-200 text-sm md:text-base">{member.role}</p>
+                        <h3 className="font-bold text-lg sm:text-xl md:text-2xl mb-1">{member.name}</h3>
+                        <p className="text-gray-200 text-base md:text-lg">{member.role}</p>
                       </div>
                     </div>
                   </div>
