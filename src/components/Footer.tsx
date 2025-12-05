@@ -47,20 +47,20 @@ export const Footer = () => {
               />
               <span className="font-bold text-lg md:text-xl">E-Abono</span>
             </div>
-            <p className="text-gray-400 text-xs md:text-sm">
+            <p className="text-gray-400 text-base md:text-sm">
               Empowering farmers with smart agricultural solutions.
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">Website</h3>
+            <h3 className="font-bold text-lg md:text-lg mb-3 md:mb-4">Website</h3>
             <ul className="space-y-1 md:space-y-2">
               {websiteLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.href}
                     onClick={() => handleLinkClick(link.href)}
-                    className="text-xs md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
+                    className="text-base md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                   >
                     {link.label}
                   </Link>
@@ -70,14 +70,14 @@ export const Footer = () => {
           </div>
 
           <div className="col-span-2 md:col-span-1">
-            <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">Resources</h3>
+            <h3 className="font-bold text-lg md:text-lg mb-3 md:mb-4">Resources</h3>
             <ul className="space-y-1 md:space-y-2">
               {resourceLinks.map((link, index) => (
                 <li key={index}>
                   {link.href.startsWith('/#') ? (
                     <a
                       href={link.href}
-                      className="text-xs md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
+                      className="text-base md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                     >
                       {link.label}
                     </a>
@@ -85,7 +85,7 @@ export const Footer = () => {
                     <Link
                       to={link.href}
                       onClick={() => handleLinkClick(link.href)}
-                      className="text-xs md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
+                      className="text-base md:text-sm text-gray-400 hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                     >
                       {link.label}
                     </Link>
@@ -96,25 +96,25 @@ export const Footer = () => {
           </div>
 
           <div className="col-span-2 md:col-span-1">
-            <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">Connect</h3>
+            <h3 className="font-bold text-lg md:text-lg mb-3 md:mb-4">Connect</h3>
             <div className="flex gap-3 md:gap-4">
               <a
                 href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
-                <Facebook size={18} className="md:w-5 md:h-5" />
+                <Facebook size={18} className="md:w-6 md:h-6" />
               </a>
               <a
                 href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
-                <Instagram size={18} className="md:w-5 md:h-5" />
+                <Instagram size={18} className="md:w-6 md:h-6" />
               </a>
               <a
                 href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
-                <Globe size={18} className="md:w-5 md:h-5" />
+                <Globe size={18} className="md:w-6 md:h-6" />
               </a>
             </div>
           </div>
@@ -127,7 +127,7 @@ export const Footer = () => {
                 <a
                   key={index}
                   href={link.href}
-                  className="text-gray-400 text-xs md:text-sm hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
+                  className="text-gray-400 text-base md:text-sm hover:text-eabono-gold hover:font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-eabono-gold pb-1"
                 >
                   {link.label}
                 </a>
