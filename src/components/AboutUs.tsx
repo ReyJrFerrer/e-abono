@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Header } from './Header';
 import { AppDownload } from './AppDownload';
@@ -61,7 +61,27 @@ export const AboutUs = () => {
     },
   ];
 
-  const slidesCount = Math.ceil(teamMembers.length / 6);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else {
+        setItemsPerPage(6);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [itemsPerPage]);
+
+  const slidesCount = Math.ceil(teamMembers.length / itemsPerPage);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesCount);
@@ -72,8 +92,8 @@ export const AboutUs = () => {
   };
 
   const getCurrentSlideMembers = () => {
-    const startIndex = currentSlide * 6;
-    return teamMembers.slice(startIndex, startIndex + 6);
+    const startIndex = currentSlide * itemsPerPage;
+    return teamMembers.slice(startIndex, startIndex + itemsPerPage);
   };
 
   return (
@@ -124,7 +144,7 @@ export const AboutUs = () => {
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-6xl mx-auto px-2 sm:px-8 md:px-0">
+            <div className="relative max-w-6xl mx-auto px-12 sm:px-12 md:px-0">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
@@ -137,7 +157,7 @@ export const AboutUs = () => {
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
-                      <div className="text-white">
+                      <div className="text-white transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
                         <h3 className="font-bold text-base sm:text-lg md:text-xl mb-1">{member.name}</h3>
                         <p className="text-gray-200 text-sm md:text-base">{member.role}</p>
                       </div>
@@ -150,14 +170,14 @@ export const AboutUs = () => {
                 <>
                   <button
                     onClick={prevSlide}
-                    className="absolute -left-3 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute left-1 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft size={20} className="md:w-6 md:h-6" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute -right-3 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute right-1 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Next slide"
                   >
                     <ChevronRight size={20} className="md:w-6 md:h-6" />
@@ -168,9 +188,8 @@ export const AboutUs = () => {
                       <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                          currentSlide === index ? 'bg-eabono-green' : 'bg-gray-300'
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${currentSlide === index ? 'bg-eabono-green' : 'bg-gray-300'
+                          }`}
                         aria-label={`Go to slide ${index + 1}`}
                       />
                     ))}

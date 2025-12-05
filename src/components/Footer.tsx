@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Globe } from 'lucide-react';
 
@@ -100,19 +99,19 @@ export const Footer = () => {
             <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">Connect</h3>
             <div className="flex gap-3 md:gap-4">
               <a
-                href="#"
+                href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
                 <Facebook size={18} className="md:w-5 md:h-5" />
               </a>
               <a
-                href="#"
+                href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
                 <Instagram size={18} className="md:w-5 md:h-5" />
               </a>
               <a
-                href="#"
+                href="/"
                 className="w-9 h-9 md:w-10 md:h-10 bg-eabono-green-light rounded-lg flex items-center justify-center hover:bg-eabono-gold transition-colors duration-200"
               >
                 <Globe size={18} className="md:w-5 md:h-5" />
