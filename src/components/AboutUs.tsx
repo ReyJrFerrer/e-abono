@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Header } from './Header';
 import { AppDownload } from './AppDownload';
@@ -12,24 +12,6 @@ interface TeamMember {
 
 export const AboutUs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      const wasMobile = isMobile;
-      const nowMobile = window.innerWidth < 768;
-      setIsMobile(nowMobile);
-
-      if (wasMobile !== nowMobile) {
-        setCurrentSlide(0);
-      }
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, [isMobile]);
 
   const teamMembers: TeamMember[] = [
     {
@@ -79,8 +61,7 @@ export const AboutUs = () => {
     },
   ];
 
-  const itemsPerSlide = isMobile ? 2 : 6;
-  const slidesCount = Math.ceil(teamMembers.length / itemsPerSlide);
+  const slidesCount = Math.ceil(teamMembers.length / 6);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesCount);
@@ -91,8 +72,8 @@ export const AboutUs = () => {
   };
 
   const getCurrentSlideMembers = () => {
-    const startIndex = currentSlide * itemsPerSlide;
-    return teamMembers.slice(startIndex, startIndex + itemsPerSlide);
+    const startIndex = currentSlide * 6;
+    return teamMembers.slice(startIndex, startIndex + 6);
   };
 
   return (
@@ -143,22 +124,22 @@ export const AboutUs = () => {
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-8 justify-items-center">
+            <div className="relative max-w-6xl mx-auto px-2 sm:px-8 md:px-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full max-w-sm"
+                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full"
                   >
                     <img
                       src={member.imageUrl}
                       alt={member.name}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 md:p-8">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
                       <div className="text-white">
-                        <h3 className="font-bold text-lg sm:text-xl md:text-2xl mb-1">{member.name}</h3>
-                        <p className="text-gray-200 text-base md:text-lg">{member.role}</p>
+                        <h3 className="font-bold text-base sm:text-lg md:text-xl mb-1">{member.name}</h3>
+                        <p className="text-gray-200 text-sm md:text-base">{member.role}</p>
                       </div>
                     </div>
                   </div>
