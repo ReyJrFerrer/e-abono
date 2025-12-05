@@ -87,60 +87,61 @@ export const AboutUs = () => {
           }}
         >
           <div className="container mx-auto px-6 text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">About Us</h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
               Empowering farmers through innovative agricultural technology and sustainable practices for a prosperous future.
             </p>
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-eabono-green mb-8 text-center">About E-Abono</h2>
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <p className="text-gray-700 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-eabono-green mb-6 md:mb-8 text-center">About E-Abono</h2>
+            <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 md:mb-6">
                 E-Abono is a groundbreaking agricultural technology initiative designed to revolutionize farming practices in the Cordillera region. Through cutting-edge AI-powered nitrogen detection and precision agriculture techniques, we provide farmers with the tools they need to optimize crop yields while maintaining environmental sustainability.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Our platform combines mobile technology, data analytics, and on-the-ground expertise to deliver real-time insights and actionable recommendations. By bridging the gap between traditional farming knowledge and modern agricultural science, E-Abono empowers local communities to thrive in an increasingly competitive agricultural landscape.
               </p>
             </div>
 
-            <h2 className="text-4xl font-bold text-eabono-green mb-8 text-center">Mission and Vision</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-eabono-green mb-6 md:mb-8 text-center">Mission and Vision</h2>
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 md:mb-6">
                 Our mission is to transform agricultural practices in Benguet province by providing farmers with accessible, science-based tools for crop management. We strive to increase agricultural productivity, improve farmer livelihoods, and promote sustainable farming practices that protect our natural resources for future generations.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 We envision a future where every farmer in the Cordillera region has access to advanced agricultural technology, enabling them to make informed decisions about fertilization, crop management, and resource allocation. Through E-Abono, we aim to create a thriving agricultural ecosystem that balances productivity with environmental stewardship, ensuring food security and economic prosperity for farming communities.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-6 overflow-hidden">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-eabono-green mb-8 md:mb-12 text-center">
               The Team Behind E-Abono
             </h2>
 
-            <div className="relative max-w-6xl mx-auto px-8 md:px-0">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
+            <div className="relative max-w-6xl mx-auto px-2 sm:px-8 md:px-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 justify-items-center">
                 {getCurrentSlideMembers().map((member, index) => (
                   <div
                     key={index}
-                    className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer w-full"
+                    className="group w-full"
                   >
-                    <img
-                      src={member.imageUrl}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-6">
-                      <div className="text-white">
-                        <h3 className="font-bold text-sm sm:text-base md:text-xl mb-1">{member.name}</h3>
-                        <p className="text-gray-200 text-xs md:text-sm">{member.role}</p>
-                      </div>
+                    <div className="relative aspect-square overflow-hidden rounded-t-lg shadow-lg">
+                      <img
+                        src={member.imageUrl}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div className="bg-white rounded-b-lg shadow-lg p-4 text-center">
+                      <h3 className="font-bold text-base md:text-lg text-eabono-green mb-1">{member.name}</h3>
+                      <p className="text-gray-600 text-sm">{member.role}</p>
                     </div>
                   </div>
                 ))}
@@ -150,14 +151,14 @@ export const AboutUs = () => {
                 <>
                   <button
                     onClick={prevSlide}
-                    className="absolute -left-3 md:-left-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -left-3 md:-left-16 top-[35%] md:top-1/3 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft size={20} className="md:w-6 md:h-6" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute -right-3 md:-right-16 top-1/2 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
+                    className="absolute -right-3 md:-right-16 top-[35%] md:top-1/3 -translate-y-1/2 bg-eabono-green text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-eabono-green-light transition-colors duration-300 z-10"
                     aria-label="Next slide"
                   >
                     <ChevronRight size={20} className="md:w-6 md:h-6" />
